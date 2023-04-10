@@ -9,6 +9,9 @@ function App() {
     const name = todoNameRef.current.value;
     if(name === '') return;// do nothing
     console.log(`You have added a new Todo: ${name}`);
+
+    todoNameRef.current.value = null;
+    // 每次點擊按鈕後自動清除輸入框內容
   }
 
   return (
