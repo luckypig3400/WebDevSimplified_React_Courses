@@ -22,6 +22,15 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(myTodos));
   }, [myTodos])
 
+  function toggleTodo(id) {
+    const newTodos = [...myTodos]
+    // 在React中要操作變數(state)，都建議要先複製該變數，等更動好再用setState()回存
+
+    const targetTodo = newTodos.find(todo => todo.id === id)
+    targetTodo.complete = !targetTodo.complete
+    setTodos(newTodos);
+  }
+
   function handleAddTodo(e) {
     const name = todoNameRef.current.value;
     if (name === '') return;// do nothing
