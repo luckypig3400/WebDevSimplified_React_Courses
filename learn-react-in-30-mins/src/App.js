@@ -7,8 +7,12 @@ function App() {
 
   function handleAddTodo(e) {
     const name = todoNameRef.current.value;
-    if(name === '') return;// do nothing
-    console.log(`You have added a new Todo: ${name}`);
+    if (name === '') return;// do nothing
+
+    // console.log(`You have added a new Todo: ${name}`);
+    setTodos(prevTodos => {
+      return [...prevTodos, { id: 1, name: name, complete: false }]
+    })
 
     todoNameRef.current.value = null;
     // 每次點擊按鈕後自動清除輸入框內容
