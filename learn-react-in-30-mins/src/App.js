@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import TodoList from './TodoList';
-import uuidv4 from 'uuid/v4';
+import {v4 as uuidv4} from 'uuid';
+// https://stackoverflow.com/questions/62549457/error-err-package-path-not-exported-package-subpath-v4-is-not-defined-by
 
 function App() {
   const [myTodos, setTodos] = useState([]);
