@@ -44,12 +44,20 @@ function App() {
     // 每次點擊按鈕後自動清除輸入框內容
   }
 
+  function handleClearCompleteTodos() {
+    const newTodos = myTodos.filter(todo => !todo.complete)
+    setTodos(newTodos);
+  }
+
+  function handleClearAllTodos() { setTodos([]) }
+
   return (
     <>
       <TodoList todos={myTodos} toggleTodo={toggleTodo} />
       <input ref={todoNameRef} type="text" /><br />
       <button onClick={handleAddTodo}>Add Todo</button>
-      <button>Clear All</button>
+      <button onClick={handleClearCompleteTodos}>Clear Completed</button>
+      <button onClick={handleClearAllTodos}>Clear All</button>
       <div>{myTodos.filter(todo => !todo.complete).length} left to do</div>
     </>
   );
