@@ -3,7 +3,8 @@ import { useState } from 'react'
 function App() {
   return (
     <div className="large" id="largerDiv">
-      Hi
+      <label htmlFor="inputID">請輸入數字</label>
+      <input type="number" id="inputID" value={3} />
     </div>
   )
 }
