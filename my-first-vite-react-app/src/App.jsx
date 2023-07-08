@@ -1,7 +1,11 @@
 import { useState } from 'react'
 
 function App() {
-  return "Hello World"
+  return (
+    <div className="large" id="largerDiv">
+      Hi
+    </div>
+  )
 }
 
 export default App
